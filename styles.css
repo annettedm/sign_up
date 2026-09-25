@@ -20,6 +20,8 @@
 ::before,
 ::after {
 	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -32,7 +34,7 @@ html {
 		sans-serif,
 		'Apple Color Emoji',
 		'Segoe UI Emoji';
-	line-height: 1.15; 
+	line-height: 1.25; 
 	-webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
 	tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
 }
@@ -132,6 +134,7 @@ span {
 
 .image-link-cont p {
   padding-left: 20px;
+  padding-bottom: 12px;
 }
 
 .text-cont {
@@ -140,11 +143,12 @@ span {
 }
 
 .pre-form-text-cont{
-  height: 296px;
+  height: 330px;
 }
 
 .pre-form-text-cont p:first-child {
-  padding-top: 130px;
+  padding-top: 149px;
+  padding-bottom: 20px;
 }
 
 .pre-form-text-cont p,
@@ -154,64 +158,103 @@ span {
   color: rgb(55, 55, 55);
 }
 
+.pre-form-text-cont p:last-child {
+  padding-top: 5px;
+}
+
+/* ------ form ----- */
+
+
 .form-cont {
   background-color: white;
+  height: 267px;
+
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+  color: rgb(80, 80, 80);
 }
 
-/* ------ normalize ----- */
-/**
-Add the correct font weight in Chrome and Safari.
-*/
-
-b,
-strong {
-	font-weight: bolder;
+.form-cont p {
+  padding-top: 16px;
+  padding-bottom: 20px;
 }
 
-/**
-1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-2. Correct the odd 'em' font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-	font-family:
-		ui-monospace,
-		SFMono-Regular,
-		Consolas,
-		'Liberation Mono',
-		Menlo,
-		monospace; /* 1 */
-	font-size: 1em; /* 2 */
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 65px;
 }
 
-/**
-Add the correct font size in all browsers.
-*/
-
-small {
-	font-size: 80%;
+fieldset {
+  border: none;
 }
 
-/**
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-*/
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	font-family: inherit; /* 1 */
-	font-size: 100%; /* 1 */
-	line-height: 1.15; /* 1 */
-	margin: 0; /* 2 */
+.item-cont {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4px;
 }
 
-img {
-  display: block;
-  max-inline-size: 100%;
-} 
+.item-cont label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.03rem;
+  padding-bottom: 2px;
+}
+
+.item-cont input {
+  border: #E9EBEE solid 1px;
+  border-radius: 4px;
+  padding: 4px 9px;
+  width: 232px;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.item-cont input:focus {
+  outline: #2856D9 solid 1px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.item-cont input.is-invalid {
+  border: rgb(205, 0, 0) solid 1px;
+  outline: none;
+}
+
+.item-cont span {
+  margin-top: 4px;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  font-style: normal;
+  font-weight: bold;
+  visibility: hidden;
+
+}
+
+.item-cont span:empty::before {
+  content: "\00a0"; 
+}
+
+span.error-message  {
+  color: rgb(205, 0, 0);
+  visibility: visible;
+}
+
+button {
+  background-color: #596D48;
+  color: white;
+  margin: 30px 0;
+  padding: 13px 49px;
+  border-radius: 7px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.btn-cont a {
+  color: #596D48;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
